@@ -3,7 +3,7 @@
 ```bash
 mkdir -p ~/Pictures/wallpapers
 ```
-
+## keybinds r in binds.txt you can change them in the hyprland.lua configuration file if yu want
 if something doesnt work its prob bcz i hardcoded something that only works for me soo debug it igg idkk (put the insides of config in yur config)
 
 
