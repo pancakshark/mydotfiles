@@ -4,7 +4,7 @@ WALL_DIR="$HOME/Pictures/wallpapers"
 
 cd "$WALL_DIR" || exit 1
 
-# pick wallpaper
+# pick wallpaper (SAFE FOR SPACES)
 SELECTED=$(find . -maxdepth 1 -type f \
   \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" \) \
   -printf "%f\n" \
@@ -23,7 +23,9 @@ ln -sf "$FULL_PATH" "$SYMLINK"
 
 echo "Symlink updated -> $SYMLINK -> $FULL_PATH"
 
-# 1. wapaper
+# -------------------------
+# 1. WALLPAPER (AWWW SAFE)
+# -------------------------
 if command -v awww >/dev/null 2>&1; then
     pgrep -x awww-daemon >/dev/null || awww-daemon &
     sleep 1
@@ -34,8 +36,9 @@ elif command -v swww >/dev/null 2>&1; then
     swww img "$FULL_PATH" --transition-type center --transition-fps 60 --transition-duration 1
 fi
 
-
-# matugen
+# -------------------------
+# 2. MATUGEN (FIXED CLEAN)
+# -------------------------
 if command -v matugen >/dev/null 2>&1; then
     matugen image "$FULL_PATH"
 fi
