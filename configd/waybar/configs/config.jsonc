@@ -1,0 +1,251 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/menu",
+        "custom/light_dark",
+        "custom/file_manager",
+        "custom/tty",
+        "custom/browser",
+        "custom/settings",
+        "custom/weather"
+    ],
+
+    "modules-center": [
+        "clock",
+        "custom/cava_mviz"
+    ],
+
+    "modules-right": [
+        "custom/hyprpicker",
+        "custom/hypridle",
+        "custom/keyboard",
+        "custom/runcat",
+        "pulseaudio",
+        "network",
+        "cpu",
+        "memory",
+        "temperature",
+        "battery",
+        "tray",
+        "custom/swaync",
+        "custom/updater",
+        "custom/power"
+    ],
+
+    // =========================
+    // HYPRLAND WORKSPACES
+    // =========================
+    "hyprland/workspaces": {
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "on-click": "activate",
+        "sort-by-number": true,
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十",
+            "active": "",
+            "default": ""
+        }
+    },
+
+    // =========================
+    // CLOCK
+    // =========================
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "<big>{:%Y-%m-%d}</big>\n{calendar}"
+    },
+
+    // =========================
+    // AUDIO
+    // =========================
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    // =========================
+    // NETWORK
+    // =========================
+    "network": {
+        "format-wifi": " {signalStrength}%",
+        "format-ethernet": "{ipaddr} ",
+        "format-disconnected": "Disconnected ⚠"
+    },
+
+    // =========================
+    // CPU / MEMORY / TEMP
+    // =========================
+    "cpu": {
+        "format": "{usage}% "
+    },
+
+    "memory": {
+        "format": "{percentage}% "
+    },
+
+    "temperature": {
+        "interval": 10,
+        "format": "{temperatureC}°C",
+        "critical-threshold": 80
+    },
+
+    // =========================
+    // BATTERY
+    // =========================
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    // =========================
+    // TRAY
+    // =========================
+    "tray": {
+        "spacing": 10
+    },
+
+    // =========================
+    // POWER
+    // =========================
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "$HOME/.config/hypr/scripts/Wlogout.sh"
+    },
+
+    "custom/quit": {
+        "format": "󰗼",
+        "on-click": "hyprctl dispatch exit"
+    },
+
+    "custom/reboot": {
+        "format": "󰜉",
+        "on-click": "systemctl reboot"
+    },
+
+    "custom/lock": {
+        "format": "󰌾",
+        "on-click": "$HOME/.config/hypr/scripts/LockScreen.sh"
+    },
+
+    // =========================
+    // WEATHER
+    // =========================
+    "custom/weather": {
+        "format": "{}",
+        "interval": 3600,
+        "return-type": "json",
+        "exec": "$HOME/.config/hypr/UserScripts/WeatherWrap.sh",
+        "tooltip": true
+    },
+
+    // =========================
+    // MEDIA
+    // =========================
+    "custom/cava_mviz": {
+        "exec": "$HOME/.config/hypr/scripts/WaybarCava.sh",
+        "format": "{}"
+    },
+
+    "custom/media": {
+        "format": "{text}",
+        "max-length": 40,
+        "exec": "echo ''",
+        "interval": 10
+    },
+
+    // =========================
+    // NOTIFICATIONS
+    // =========================
+    "custom/swaync": {
+        "exec": "swaync-client -swb",
+        "return-type": "json",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw"
+    },
+
+    // =========================
+    // UPDATER
+    // =========================
+    "custom/updater": {
+        "format": " {}",
+        "exec": "checkupdates | wc -l",
+        "interval": 43200
+    },
+
+    // =========================
+    // EXTRA UTIL
+    // =========================
+    "custom/hyprpicker": {
+        "format": "",
+        "on-click": "hyprpicker | wl-copy"
+    },
+
+    "custom/file_manager": {
+        "format": "",
+        "on-click": "$HOME/.config/hypr/scripts/WaybarScripts.sh --files"
+    },
+
+    "custom/tty": {
+        "format": "",
+        "on-click": "$HOME/.config/hypr/scripts/WaybarScripts.sh --term"
+    },
+
+    "custom/browser": {
+        "format": "",
+        "on-click": "xdg-open https://"
+    },
+
+    "custom/settings": {
+        "format": "",
+        "on-click": "$HOME/.config/hypr/scripts/Kool_Quick_Settings.sh"
+    },
+
+    "custom/menu": {
+        "format": "",
+        "on-click": "rofi -show drun"
+    },
+
+    "custom/keyboard": {
+        "format": " {}",
+        "exec": "$HOME/.config/hypr/scripts/KeyboardLayout.sh status",
+        "interval": 1
+    },
+
+    "custom/hypridle": {
+        "format": "󱫗",
+        "exec": "$HOME/.config/hypr/scripts/Hypridle.sh status",
+        "interval": 60,
+        "on-click": "$HOME/.config/hypr/scripts/Hypridle.sh toggle"
+    },
+
+    "custom/light_dark": {
+        "format": "󰔎",
+        "on-click": "$HOME/.config/hypr/scripts/DarkLight.sh"
+    },
+
+}
