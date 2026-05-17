@@ -1,0 +1,51 @@
+SUPER + RETURN      = Terminal
+SUPER + E           = File manager
+SUPER + D           = App launcher
+SUPER + SHIFT + V   = Clipboard history
+
+SUPER + Q           = Close window
+SUPER + V           = Toggle floating
+SUPER + P           = Toggle pseudotile
+SUPER + J           = Toggle split
+
+SUPER + M           = Shutdown / Exit
+SUPER + SHIFT + R   = Restart Waybar
+SUPER + L           = Lock screen
+
+SUPER + SHIFT + S   = Screenshot UI
+SUPER + W           = Wallpaper picker
+SUPER + SHIFT + X   = Kill active process
+SUPER + SHIFT + C   = Color picker
+SUPER + CTRL + B    = Change Waybar styles
+SUPER + ALT + B     = Change Waybar layout
+SUPER + H           = Reload Waybar
+
+SUPER + LEFT        = Focus left
+SUPER + RIGHT       = Focus right
+SUPER + UP          = Focus up
+SUPER + DOWN        = Focus down
+
+SUPER + 1-0         = Switch workspace
+SUPER + SHIFT + 1-0 = Move window to workspace
+
+SUPER + S           = Toggle special workspace
+SUPER + CTRL + S    = Move window to special workspace
+
+SUPER + Mouse Down  = Next workspace
+SUPER + Mouse Up    = Previous workspace
+
+SUPER + Left Click  = Move window
+SUPER + Right Click = Resize window
+
+XF86AudioRaiseVolume = Volume up
+XF86AudioLowerVolume = Volume down
+XF86AudioMute        = Toggle mute
+XF86AudioMicMute     = Toggle mic mute
+
+XF86MonBrightnessUp   = Brightness up
+XF86MonBrightnessDown = Brightness down
+
+XF86AudioNext  = Next track
+XF86AudioPause = Play/Pause
+XF86AudioPlay  = Play/Pause
+XF86AudioPrev  = Previous track
