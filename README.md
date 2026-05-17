@@ -1,6 +1,11 @@
 # mydotfiles
+## put your wallpapers in your picture directory, then make a folder in it called wallpaper
+```bash
+mkdir -p ~/Pictures/wallpapers
+```
 
-if something doesnt work its prob bcz i hardcoded something that only works for me soo debug it igg idkk
+if something doesnt work its prob bcz i hardcoded something that only works for me soo debug it igg idkk (put the insides of config in yur config)
+
 
 this is heavily based on [binnewbs' dotfiles](https://github.com/binnewbs/arch-hyprland) 
 
